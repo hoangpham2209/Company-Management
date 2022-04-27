@@ -28,8 +28,8 @@ public class DepartmentManagement {
         }
     }
 
-    public void addDepartment(Department department) {
-        this.departmentList.add(department);
+    public void addDepartment(Department d) {
+        this.departmentList.add(d);
     }
 
     public Department searchByName(String key) {

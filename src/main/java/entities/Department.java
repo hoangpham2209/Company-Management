@@ -54,7 +54,10 @@ public class Department {
 
 	public void showList(Department d) {
 		System.out.println("Danh sách nhân viên phòng ban:");
-		d.staffList.forEach(nv -> System.out.println(nv.getName()));
+		d.staffList.forEach(nv -> {
+			nv.show();
+			System.out.println("=================================");
+		});
 	}
 
 	public String getName() {
