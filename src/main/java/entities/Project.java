@@ -54,6 +54,8 @@ public class Project {
     }
 
     public void addLeader() {
+        removeLeader();
+
         System.out.print("Nhập mã nhân viên chủ nhiệm dự án: ");
         String id = General.formatId(General.s.nextLine());
 
@@ -62,6 +64,12 @@ public class Project {
 
         staff.getLeadProjects().add(this);
         staff.getJoinProjects().add(this);
+    }
+
+    public void removeLeader() {
+        this.getLeader().getLeadProjects().remove(this);
+        this.getLeader().getJoinProjects().remove(this);
+        setLeader(null);
     }
 
     public void show() {
