@@ -26,6 +26,9 @@ public class Project {
         setEndDate(endDate);
         setCost(cost);
         setLeader(leader);
+
+        this.getLeader().getJoinProjects().add(this);
+        this.getLeader().getLeadProjects().add(this);
     }
 
     public Project(String name, String startDate, String endDate, double cost, Staff leader) throws ParseException {

@@ -23,8 +23,6 @@ public class ProjectManagement {
 			while (sc.hasNext()) {
 				Project p = new Project(General.formatName(sc.nextLine()), General.f.parse(sc.nextLine()), General.f.parse(sc.nextLine()), Double.parseDouble(sc.nextLine()),Demo.staffList.searchById(General.formatId(sc.nextLine())));
 
-				p.getLeader().getJoinProjects().add(p);
-				p.getLeader().getLeadProjects().add(p);
 				this.projectList.add(p);
 			}
 		} catch (FileNotFoundException e) {
