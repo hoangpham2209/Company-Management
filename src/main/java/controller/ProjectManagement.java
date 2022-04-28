@@ -1,6 +1,7 @@
 package controller;
 
 import entities.Project;
+import entities.Staff;
 import layout.Demo;
 import layout.General;
 
@@ -22,6 +23,8 @@ public class ProjectManagement {
 			while (sc.hasNext()) {
 				Project p = new Project(General.formatName(sc.nextLine()), General.f.parse(sc.nextLine()), General.f.parse(sc.nextLine()), Double.parseDouble(sc.nextLine()),Demo.staffList.searchById(General.formatId(sc.nextLine())));
 
+				p.getLeader().getJoinProjects().add(p);
+				p.getLeader().getLeadProjects().add(p);
 				this.projectList.add(p);
 			}
 		} catch (FileNotFoundException e) {
@@ -35,10 +38,26 @@ public class ProjectManagement {
 
 	public void removeProject(Project p) {
 		this.projectList.remove(p);
+
+		Demo.staffList.getStaffList().forEach(staff -> {
+			staff.getJoinProjects().remove(p);
+			staff.getLeadProjects().remove(p);
+		});
 	}
 
 	public void editProject(Project p) throws ParseException {
 		p.input();
+
+		Demo.staffList.getStaffList().forEach(staff -> {
+			staff.getJoinProjects().forEach(project -> {
+				if (project.equals(p) == true)
+					project = p;
+			});
+			staff.getLeadProjects().forEach(project -> {
+				if (project.equals(p) == true)
+					project = p;
+			});
+		});
 	}
 
 	public void sortCost() {

@@ -57,8 +57,11 @@ public class Project {
         System.out.print("Nhập mã nhân viên chủ nhiệm dự án: ");
         String id = General.formatId(General.s.nextLine());
 
-        setLeader(Demo.staffList.searchById(id));
-        Demo.staffList.searchById(id).getLeadProjects().add(this);
+        Staff staff = Demo.staffList.searchById(id);
+        setLeader(staff);
+
+        staff.getLeadProjects().add(this);
+        staff.getJoinProjects().add(this);
     }
 
     public void show() {

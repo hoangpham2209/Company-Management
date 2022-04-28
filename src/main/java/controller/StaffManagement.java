@@ -14,10 +14,6 @@ public class StaffManagement {
 		this.staffList.add(staff);
 	}
 
-	public void removeStaff(Staff staff) {
-		this.staffList.remove(staff);
-	}
-
 	public Staff searchById(String key) {
 		for (int i = 0; i < staffList.size(); i++) {
 			if (staffList.get(i).getId().equals(key) == true)

@@ -44,8 +44,8 @@ public class Menu {
         do {
             General.clearScreen();
             System.out.println("CHỨC NĂNG NHÂN VIÊN");
-            System.out.printf("1/ Thêm nhân viên \n2/ Xóa nhân viên \n3/ Tìm kiếm nhân viên theo tên \n4/ Tìm kiếm nhân viên theo ngày sinh \n5/ Tìm kiếm nhân viên theo phòng ban \n" +
-                    "6/ Tính tiền lương nhân viên \n7/ Hiển thị danh sách nhân viên \n8/ Hiển thị danh sách dự án của nhân viên \n9/ Quay lại \n");
+            System.out.printf("1/ Thêm nhân viên \n2/ Tìm kiếm nhân viên theo tên \n3/ Tìm kiếm nhân viên theo ngày sinh \n4/ Tìm kiếm nhân viên theo phòng ban \n" +
+                    "5/ Tính tiền lương nhân viên \n6/ Hiển thị danh sách nhân viên \n7/ Hiển thị danh sách dự án của nhân viên \n8/ Quay lại \n");
             System.out.print("Sự lựa chọn của bạn: ");
             choose = Integer.parseInt(General.s.nextLine());
             General.clearScreen();
@@ -57,15 +57,7 @@ public class Menu {
                     System.out.println("Nhập thành công! ");
                     break;
                 }
-                case 2: {
-                    System.out.print("Nhập mã nhân viên cần xóa: ");
-                    String id = General.formatId(General.s.nextLine());
-
-                    Demo.staffList.removeStaff(Demo.staffList.searchById(id));
-                    System.out.println("Xóa thành công! ");
-                    break;
-                }
-                case 3:{
+                case 2:{
                     System.out.print("Nhập tên nhân viên cần tìm: ");
                     String name =  General.formatName(General.s.nextLine());
 
@@ -75,7 +67,7 @@ public class Menu {
                     });
                     break;
                 }
-                case 4:{
+                case 3:{
                     System.out.print("Nhập ngày sinh của nhân viên cần tìm: ");
                     String start = General.s.nextLine().trim();
 
@@ -85,7 +77,7 @@ public class Menu {
                     });
                     break;
                 }
-                case 5:{
+                case 4:{
                     System.out.print("Nhập tên phòng ban cần tìm: ");
                     String name = General.formatName(General.s.nextLine());
 
@@ -96,7 +88,7 @@ public class Menu {
                         }
                     break;
                 }
-                case 6:{
+                case 5:{
                     Demo.staffList.getStaffList().forEach(staff -> {
                         staff.show();
                         System.out.printf("- Lương: %.2f\n", staff.calSalary());
@@ -104,18 +96,18 @@ public class Menu {
                     });
                     break;
                 }
-                case 7:{
+                case 6:{
                     Demo.staffList.show();
                     break;
                 }
-                case 8: {
+                case 7: {
                     System.out.print("Nhập mã nhân viên: ");
                     String id = General.formatId(General.s.nextLine());
 
                     Demo.staffList.searchById(id).showJoinProjects();
                     break;
                 }
-                case 9: {
+                case 8: {
                     mainMenu();
                     break;
                 }
@@ -126,7 +118,7 @@ public class Menu {
                 }
             }
             General.hold();
-        } while (choose > 0 && choose <= 9);
+        } while (choose > 0 && choose <= 8);
 
         System.exit(0);
     }
