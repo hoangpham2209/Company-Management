@@ -20,6 +20,10 @@ public class Manager extends Staff {
 		this(name, mail, sex, dob, coefficient, General.f.parse(leadDate));
 	}
 
+	private void print() {
+		System.out.print("a");
+	}
+
     public Manager() {
 		this.id = String.format("QL%02d", ++count);
     }

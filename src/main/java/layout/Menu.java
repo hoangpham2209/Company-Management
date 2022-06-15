@@ -18,7 +18,7 @@ public class Menu {
             System.out.print("Sự lựa chọn của bạn: ");
             choose = Integer.parseInt(General.s.nextLine());
             General.clearScreen();
-            System.out.println("=================================\n");
+
             switch (choose) {
                 case 1: {
                     staffMenu();
@@ -49,7 +49,7 @@ public class Menu {
             System.out.print("Sự lựa chọn của bạn: ");
             choose = Integer.parseInt(General.s.nextLine());
             General.clearScreen();
-            System.out.println("=================================\n");
+
             switch (choose) {
                 case 1: {
                     staff.input();
@@ -133,7 +133,7 @@ public class Menu {
             System.out.print("Sự lựa chọn của bạn: ");
             choose = Integer.parseInt(General.s.nextLine());
             General.clearScreen();
-            System.out.println("=================================\n");
+
             switch (choose) {
                 case 1: {
                     project.input();
@@ -246,7 +246,7 @@ public class Menu {
             System.out.print("Sự lựa chọn của bạn: ");
             choose = Integer.parseInt(General.s.nextLine());
             General.clearScreen();
-            System.out.println("=================================\n");
+
             switch (choose) {
                 case 1: {
                     department.input();

@@ -17,6 +17,7 @@ public class DepartmentManagement {
 
     public void inputFile(String path) throws ParseException {
         File f = new File(path);
+
         try (Scanner sc = new Scanner(f)) {
             while (sc.hasNext()) {
                 Department d = new Department(General.formatName(sc.nextLine()), (Manager) Demo.staffList.searchById(General.formatId(sc.nextLine())));

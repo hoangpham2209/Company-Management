@@ -39,8 +39,8 @@ public class Demo {
         staffList.addStaff(nv11);
         staffList.addStaff(nv12);
 
-        projectList.inputFile("src/main/resources/projects.txt");
-        departmentList.inputFile("src/main/resources/departments.txt");
+        projectList.inputFile("/home/lap13776/Desktop/QuanLyNhanVien/src/main/resources/projects.txt");
+        departmentList.inputFile("/home/lap13776/Desktop/QuanLyNhanVien/src/main/resources/departments.txt");
 
         Menu menu = new Menu();
         menu.mainMenu();
